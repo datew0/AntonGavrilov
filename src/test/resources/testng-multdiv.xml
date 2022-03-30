@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Component Tests" verbose="2" annotations="JDK">
+    <test name="Multiply operation test">
+        <classes>
+            <class name="hw1.MultTest" />
+        </classes>
+    </test>
+    <test name="Divide operation test">
+        <classes>
+            <class name="hw1.DivTest" />
+        </classes>
+    </test>
+</suite>
