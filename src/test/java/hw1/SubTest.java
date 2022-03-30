@@ -27,7 +27,7 @@ public class SubTest {
 
     @Test(dataProvider = "testLongData")
     public void testLong(long op1, long op2, long res) {
-        long actual = calc.sub(op1,op2);
+        long actual = calc.sub(op1, op2);
         Assert.assertEquals(actual, res);
     }
 

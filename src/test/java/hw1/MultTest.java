@@ -27,7 +27,7 @@ public class MultTest {
 
     @Test(dataProvider = "testIntegerData")
     public void testInteger(long op1, long op2, long res) {
-        long actual = calc.mult(op1,op2);
+        long actual = calc.mult(op1, op2);
         double delta = 0.001;
         Assert.assertEquals(actual, res, delta);
     }

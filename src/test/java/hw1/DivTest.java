@@ -27,7 +27,7 @@ public class DivTest {
 
     @Test(dataProvider = "testIntegerData")
     public void testInteger(long op1, long op2, long res) {
-        long actual = calc.div(op1,op2);
+        long actual = calc.div(op1, op2);
         double delta = 0.001;
         Assert.assertEquals(actual, res, delta);
     }
@@ -51,6 +51,8 @@ public class DivTest {
 
     @Test(dataProvider = "testByZeroData")
     public void testByZero(long op1, long op2, long res) {
-        Assert.assertThrows(NumberFormatException.class, ()->{calc.div(op1,op2);});
+        Assert.assertThrows(NumberFormatException.class, () -> {
+            calc.div(op1, op2);
+        });
     }
 }

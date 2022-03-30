@@ -1,4 +1,5 @@
 package hw1;
+
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -26,13 +27,13 @@ public class SumTest {
 
     @Test(dataProvider = "testLongData")
     public void testLong(long op1, long op2, long res) {
-        long actual = calc.sum(op1,op2);
-        Assert.assertEquals(actual,res);
+        long actual = calc.sum(op1, op2);
+        Assert.assertEquals(actual, res);
     }
 
     @DataProvider
     public static Object[][] testDoubleData() {
-        return new Object[][]{{4.3, 2.2, 6.5}, {5.1,3,8.1}};
+        return new Object[][]{{4.3, 2.2, 6.5}, {5.1, 3, 8.1}};
     }
 
     @Test(dataProvider = "testDoubleData")
