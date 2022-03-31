@@ -1,24 +1,10 @@
 package hw1;
 
-import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class DivTest {
-    private Calculator calc;
-
-    @BeforeMethod
-    public void init() {
-        calc = new Calculator();
-    }
-
-    @AfterMethod
-    public void clean() {
-        calc = null;
-    }
+public class DivTest extends CalculatorTest {
 
     @DataProvider
     public static Object[][] testIntegerData() {
