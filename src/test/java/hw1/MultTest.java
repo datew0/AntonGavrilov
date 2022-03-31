@@ -20,8 +20,7 @@ public class MultTest extends CalculatorTest {
 
     @DataProvider
     public static Object[][] testDoubleData() {
-        /* Considering that the result should be rounded */
-        return new Object[][]{{1.1, 2.2, 2}, {5.1, 3.0, 15}};
+        return new Object[][]{{1.1, 2.2, 2.42}, {5.1, 3.0, 15.3}};
     }
 
     @Test(dataProvider = "testDoubleData")
