@@ -32,11 +32,11 @@ public class DivTest extends CalculatorTest {
 
     @DataProvider
     public static Object[][] testByZeroDivData() {
-        return new Object[][]{{9, 0, 0}, {0, 0, 0}};
+        return new Object[][]{{9, 0}, {0, 0}};
     }
 
     @Test(dataProvider = "testByZeroDivData")
-    public void testByZeroDiv(long op1, long op2, long res) {
+    public void testByZeroDiv(long op1, long op2) {
         Assert.assertThrows(NumberFormatException.class, () -> {
             calc.div(op1, op2);
         });
