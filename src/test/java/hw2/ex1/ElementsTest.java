@@ -13,7 +13,7 @@ import java.util.ListIterator;
 public class ElementsTest extends SeleniumTest {
 
     @Test
-    public void testElements() throws InterruptedException {
+    public void testElements() {
         SoftAssert softAssert = new SoftAssert();
 
         // Open test site by URL
