@@ -43,9 +43,9 @@ public class ElementsTest extends SeleniumTest {
         // Assert that there are 4 images on the Index Page, and they are displayed
         List<WebElement> icons = driver.findElements(By.className("icons-benefit"));
         softAssert.assertEquals(icons.size(), 4);
-        for (WebElement i : icons)
+        for (WebElement i : icons) {
             softAssert.assertTrue(i.isDisplayed());
-
+        }
         // Assert that there are 4 texts on the Index Page under icons, and they have proper text
         List<WebElement> texts = driver.findElements(By.cssSelector("span.benefit-txt"));
         String[] expectedTexts = {
