@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
