@@ -4,7 +4,6 @@ import hw2.SeleniumTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -13,7 +12,7 @@ import java.util.List;
 public class ControlsTest extends SeleniumTest {
 
     @Test
-    public void testControls(){
+    public void testControls() {
         SoftAssert softAssert = new SoftAssert();
 
         // Open test site by URL
@@ -43,7 +42,6 @@ public class ControlsTest extends SeleniumTest {
         WebElement windCBox = driver.findElement(By.xpath("//label[contains(.,\"Wind\")]/input"));
         windCBox.click();
         softAssert.assertTrue(windCBox.isSelected());
-        int a = 10;
 
         // Select radio: Selen
         WebElement selenRadioBtn = driver.findElement(By.xpath("//label[contains(.,\"Selen\")]/input"));
@@ -57,8 +55,8 @@ public class ControlsTest extends SeleniumTest {
 
         // Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         List<WebElement> log = driver.findElements(By.cssSelector("ul.logs > li"));
-        String expectedLogMsg[] = new String[] {"Yellow", "Selen", "Wind", "Water"};
-        for (int i=0; i < 4; ++i){
+        String expectedLogMsg[] = new String[]{"Yellow", "Selen", "Wind", "Water"};
+        for (int i = 0; i < 4; ++i) {
             softAssert.assertTrue(log.get(i).getText().contains(expectedLogMsg[i]));
         }
 
