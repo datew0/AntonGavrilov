@@ -75,14 +75,15 @@ public class ElementsTest extends SeleniumTest {
         driver.switchTo().defaultContent();
 
         // Assert that there are 5 items in the Left Section are displayed, and they have proper text
-        List<WebElement> navButtons = new LinkedList<>();
+        List<WebElement> navButtons = driver.findElements(By.cssSelector("ul.sidebar-menu > li"));
         String[] navLabels = {"Home", "Contact form", "Service", "Metals & Colors", "Elements packs"};
         for (int i = 0; i < 5; ++i) {
-            WebElement button = driver.findElement(By.cssSelector("div#mCSB_1_container > ul > li[index='" + (i + 1) + "']"));
+            WebElement button = navButtons.get(i);
             softAssert.assertEquals(button.getText(), navLabels[i]);
             softAssert.assertTrue(button.isDisplayed());
-            navButtons.add(button);
         }
         softAssert.assertEquals(navButtons.size(), 5);
+
+        softAssert.assertAll();
     }
 }
