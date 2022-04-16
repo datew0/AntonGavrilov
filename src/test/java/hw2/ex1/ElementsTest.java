@@ -33,13 +33,12 @@ public class ElementsTest extends SeleniumTest {
         softAssert.assertEquals(username.getText(), "ROMAN IOVLEV");
 
         // Assert that there are 4 items on the header section are displayed, and they have proper texts
-        Object navBarItems[] = driver.findElements(By.cssSelector("ul.nav > li")).toArray();
+        List<WebElement> navBarItems = driver.findElements(By.cssSelector("ul.nav > li"));
         String[] navBarLabels = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
-        for (int i=0; i<4; ++i){
-            softAssert.assertTrue(((WebElement)navBarItems[i]).isDisplayed());
-            softAssert.assertEquals(((WebElement)navBarItems[i]).getText(),navBarLabels[i]);
+        for (int i = 0; i < 4; ++i) {
+            softAssert.assertTrue((navBarItems.get(i)).isDisplayed());
+            softAssert.assertEquals((navBarItems.get(i)).getText(), navBarLabels[i]);
         }
-
 
         // Assert that there are 4 images on the Index Page, and they are displayed
         List<WebElement> icons = driver.findElements(By.className("icons-benefit"));
