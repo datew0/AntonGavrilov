@@ -54,6 +54,7 @@ public class ElementsTest extends SeleniumTest {
                 "To be multiplatform",
                 "Already have good base (about 20 internal and some external projects), wish to get more…"
         };
+        softAssert.assertEquals(texts.size(), 4);
         ListIterator<WebElement> it = texts.listIterator();
         for (int i = 0; i < 4; ++i) {
             WebElement text = it.next();
