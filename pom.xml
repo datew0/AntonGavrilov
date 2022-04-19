@@ -35,9 +35,20 @@
                 <project.test.suite>src/test/resources/testng-multdiv.xml</project.test.suite>
             </properties>
         </profile>
+        <profile>
+            <id>selenium-base</id>
+            <properties>
+                <project.test.suite>src/test/resources/testng-selenium-base.xml</project.test.suite>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.1.3</version>
+        </dependency>
         <dependency>
             <groupId>test.example</groupId>
             <artifactId>calculator</artifactId>
