@@ -19,11 +19,7 @@ public abstract class SeleniumTest {
     @BeforeSuite
     public void initSuite() {
         WebDriverManager.chromedriver().setup();
-        try {
-            properties.load(new FileReader("src/test/resources/user.properties"));
-        } catch (IOException e) {
-            System.err.println("Loading properties from file failed!");
-        }
+
     }
 
     @BeforeMethod
@@ -31,6 +27,12 @@ public abstract class SeleniumTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        try {
+            properties.load(new FileReader("src/test/resources/user.properties"));
+        } catch (IOException e) {
+            System.err.println("Loading properties from file failed!");
+        }
     }
 
     @AfterMethod
