@@ -18,7 +18,6 @@ public class ElementsGroup {
     })
     private List<WebElement> variants;
 
-
     public ElementsGroup(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }

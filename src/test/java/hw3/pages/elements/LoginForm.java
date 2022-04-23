@@ -9,10 +9,13 @@ public class LoginForm {
 
     @FindBy(id = "user-icon")
     private WebElement userIcon;
+
     @FindBy(id = "name")
     private WebElement user;
+
     @FindBy(id = "password")
     private WebElement password;
+
     @FindBy(className = "btn-login")
     private WebElement loginBtn;
 

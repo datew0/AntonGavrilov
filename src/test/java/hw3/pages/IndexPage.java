@@ -11,6 +11,7 @@ import java.util.List;
 
 public class IndexPage {
     private final WebDriver driver;
+    
     final String url = "https://jdi-testing.github.io/jdi-light/index.html";
 
     private final LoginForm loginForm;

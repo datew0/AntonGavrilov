@@ -19,7 +19,6 @@ public abstract class SeleniumTest {
     @BeforeSuite
     public void initSuite() {
         WebDriverManager.chromedriver().setup();
-
     }
 
     @BeforeMethod
