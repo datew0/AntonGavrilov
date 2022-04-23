@@ -2,6 +2,7 @@ package hw3.ex1;
 
 import hw3.SeleniumTest;
 import hw3.pages.IndexPage;
+import hw3.pages.elements.LeftNavBar;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -69,7 +70,7 @@ public class ElementsTest extends SeleniumTest {
         driver.switchTo().defaultContent();
 
         // Assert that there are 5 items in the Left Section are displayed, and they have proper text
-        IndexPage.LeftNavBar leftNavBar = indexPage.getLeftNavBar();
+        LeftNavBar leftNavBar = indexPage.getLeftNavBar();
         String[] navLabels = {"Home", "Contact form", "Service", "Metals & Colors", "Elements packs"};
         for (int i = 0; i < 5; ++i) {
             WebElement button = leftNavBar.getButton(i);

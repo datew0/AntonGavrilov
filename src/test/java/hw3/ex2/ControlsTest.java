@@ -14,7 +14,7 @@ import java.util.List;
 public class ControlsTest extends SeleniumTest {
 
     @Test
-    public void testControls(){
+    public void testControls() {
         SoftAssert softAssert = new SoftAssert();
 
         // Open test site by URL
@@ -35,15 +35,15 @@ public class ControlsTest extends SeleniumTest {
         DifferentElementsPage diffElemPage = PageFactory.initElements(driver, DifferentElementsPage.class);
 
         // Select checkboxes: Water, Wind
-        WebElement waterCBox = diffElemPage.getWaterCBox();
+        WebElement waterCBox = diffElemPage.getElements().getCBox("Water");
         waterCBox.click();
         softAssert.assertTrue(waterCBox.isSelected());
-        WebElement windCBox = diffElemPage.getWindCBox();
+        WebElement windCBox = diffElemPage.getElements().getCBox("Wind");
         windCBox.click();
         softAssert.assertTrue(windCBox.isSelected());
 
         // Select radio: Selen
-        WebElement selenRadioBtn = diffElemPage.getSelenRadioBtn();
+        WebElement selenRadioBtn = diffElemPage.getMaterials().getCBox("Selen");
         selenRadioBtn.click();
         softAssert.assertTrue(selenRadioBtn.isSelected());
 
