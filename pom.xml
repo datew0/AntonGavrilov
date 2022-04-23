@@ -47,6 +47,12 @@
                 <project.test.suite>src/test/resources/testng-selenium-page-object.xml</project.test.suite>
             </properties>
         </profile>
+        <profile>
+            <id>selenium-step-allure</id>
+            <properties>
+                <project.test.suite>src/test/resources/testng-step.xml</project.test.suite>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
