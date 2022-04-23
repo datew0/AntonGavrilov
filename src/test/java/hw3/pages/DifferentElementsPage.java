@@ -1,46 +1,26 @@
 package hw3.pages;
 
+import hw3.pages.elements.ElementsGroup;
+import hw3.pages.elements.LogComponent;
+import hw3.pages.elements.MaterialsGroup;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
 
 public class DifferentElementsPage {
-    private WebDriver driver;
 
-    @FindBy(xpath = "//label[contains(.,\"Water\")]/input")
-    private WebElement waterCBox;
+    private final ElementsGroup elements;
 
-
-    @FindBy(xpath = "//label[contains(.,\"Wind\")]/input")
-    private WebElement windCBox;
-
-    @FindBy(xpath = "//label[contains(.,\"Selen\")]/input")
-    private WebElement selenRadioBtn;
+    private final MaterialsGroup materials;
 
     @FindBy(css = "select.uui-form-element")
     private WebElement dropdownMenu;
 
-    public class LogComponent {
-
-        @FindBy(css = "ul.logs > li")
-        List<WebElement> log;
-
-        public LogComponent(WebDriver driver) {
-            PageFactory.initElements(driver, this);
-        }
-
-        public List<WebElement> getLog() {
-            return log;
-        }
-    }
-    private LogComponent logComponent;
+    private final LogComponent logComponent;
 
     public DifferentElementsPage(WebDriver driver) {
-        this.driver = driver;
+        elements = new ElementsGroup(driver);
+        materials = new MaterialsGroup(driver);
         logComponent = new LogComponent(driver);
     }
 
@@ -48,16 +28,12 @@ public class DifferentElementsPage {
         return logComponent;
     }
 
-    public WebElement getWaterCBox() {
-        return waterCBox;
+    public ElementsGroup getElements() {
+        return elements;
     }
 
-    public WebElement getWindCBox() {
-        return windCBox;
-    }
-
-    public WebElement getSelenRadioBtn() {
-        return selenRadioBtn;
+    public MaterialsGroup getMaterials() {
+        return materials;
     }
 
     public WebElement getDropdownMenu() {
