@@ -5,13 +5,13 @@ import hw4.pages.IndexPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public abstract class Step {
+public abstract class BaseStep {
     protected WebDriver driver;
 
     IndexPage indexPage;
     DifferentElementsPage diffElemPage;
 
-    public Step(WebDriver driver) {
+    public BaseStep(WebDriver driver) {
         this.driver = driver;
         indexPage = PageFactory.initElements(driver, IndexPage.class);
         diffElemPage = PageFactory.initElements(driver, DifferentElementsPage.class);

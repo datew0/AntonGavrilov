@@ -1,5 +1,6 @@
 package hw4.steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -7,20 +8,24 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
-public class AssertStep extends Step {
+public class AssertStep extends BaseStep {
 
     public AssertStep(WebDriver driver) {
         super(driver);
     }
 
+    @Step("Ensure that title is {expected}")
     public void checkTitle(String expected) {
         Assert.assertEquals(driver.getTitle(), expected);
     }
 
+    @Step("Ensure that username {expected} is displayed")
     public void checkUsername(String expected) {
         Assert.assertEquals(indexPage.getUsername().getText(), expected);
+        Assert.assertTrue(indexPage.getUsername().isDisplayed());
     }
 
+    @Step("Ensure that header items are displayed and contain {expectedLabels}")
     public void checkHeaderItems(List<String> expectedLabels) {
         SoftAssert softAssert = new SoftAssert();
 
@@ -34,6 +39,7 @@ public class AssertStep extends Step {
         softAssert.assertAll();
     }
 
+    @Step("Ensure that {count} image(s) are displayed")
     public void checkImages(int count) {
         SoftAssert softAssert = new SoftAssert();
 
@@ -46,6 +52,7 @@ public class AssertStep extends Step {
         softAssert.assertAll();
     }
 
+    @Step("Ensure that image legends are displayed and contain {expectedTexts}")
     public void checkTextsUnderIcons(List<String> expectedTexts) {
         SoftAssert softAssert = new SoftAssert();
 
@@ -60,16 +67,19 @@ public class AssertStep extends Step {
         softAssert.assertAll();
     }
 
+    @Step("Ensure that frame is presented")
     public void checkIFrame() {
         WebElement frame = indexPage.getFrame();
         Assert.assertTrue(frame.isDisplayed());
     }
 
+    @Step("Ensure that frame button is presented")
     public void checkFrameButton() {
         WebElement frameButton = indexPage.getFrameButton();
         Assert.assertTrue(frameButton.isDisplayed());
     }
 
+    @Step("Ensure that left navbar contains {expectedLabels}")
     public void checkLeftNavBar(List<String> expectedLabels) {
         SoftAssert softAssert = new SoftAssert();
 
@@ -83,6 +93,7 @@ public class AssertStep extends Step {
         softAssert.assertAll();
     }
 
+    @Step("Ensure that {expectedEntries} are presented in logs")
     public void checkLogs(List<String> expectedEntries) {
         SoftAssert softAssert = new SoftAssert();
 
