@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 public abstract class SeleniumTest {
+
     protected WebDriver driver;
     protected Properties properties = new Properties();
 
@@ -38,5 +39,9 @@ public abstract class SeleniumTest {
     public void clean() {
         driver.quit();
         driver = null;
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
