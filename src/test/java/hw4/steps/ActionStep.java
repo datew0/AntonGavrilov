@@ -41,7 +41,7 @@ public class ActionStep extends Step {
         materialCBox.click();
     }
 
-    public void selectColor(String color){
+    public void selectColor(String color) {
         Select dropdownMenu = new Select(diffElemPage.getDropdownMenu());
         dropdownMenu.selectByVisibleText("Yellow");
     }

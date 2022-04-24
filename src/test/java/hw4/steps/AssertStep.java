@@ -73,7 +73,7 @@ public class AssertStep extends Step {
     public void checkLeftNavBar(List<String> expectedLabels) {
         SoftAssert softAssert = new SoftAssert();
 
-        for (int i = 0; i < 5; ++i) {
+        for (int i = 0; i < expectedLabels.size(); ++i) {
             WebElement button = indexPage.getLeftNavBar().getButton(i);
             softAssert.assertEquals(button.getText(), expectedLabels.get(i));
             softAssert.assertTrue(button.isDisplayed());

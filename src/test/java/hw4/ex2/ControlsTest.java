@@ -1,18 +1,11 @@
 package hw4.ex2;
 
 import hw4.SeleniumTest;
-import hw4.pages.DifferentElementsPage;
-import hw4.pages.IndexPage;
 import hw4.steps.ActionStep;
 import hw4.steps.AssertStep;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class ControlsTest extends SeleniumTest {
 
