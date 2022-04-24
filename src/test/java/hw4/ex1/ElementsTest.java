@@ -3,13 +3,17 @@ package hw4.ex1;
 import hw4.SeleniumTest;
 import hw4.steps.ActionStep;
 import hw4.steps.AssertStep;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
+@Story("User can login, elements are displaying")
 public class ElementsTest extends SeleniumTest {
 
-    @Test
+    @Feature("Checking elements")
+    @Test(description = "Elements are visible for authorized user")
     public void testElements() {
         ActionStep actionStep = new ActionStep(driver);
         AssertStep assertStep = new AssertStep(driver);

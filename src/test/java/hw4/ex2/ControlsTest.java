@@ -3,13 +3,17 @@ package hw4.ex2;
 import hw4.SeleniumTest;
 import hw4.steps.ActionStep;
 import hw4.steps.AssertStep;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
+@Story("User can login and interact with controls")
 public class ControlsTest extends SeleniumTest {
 
-    @Test
+    @Feature("Checking controls")
+    @Test(description = "Test form elements and logs")
     public void testControls() {
         ActionStep actionStep = new ActionStep(driver);
         AssertStep assertStep = new AssertStep(driver);
