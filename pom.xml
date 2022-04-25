@@ -41,6 +41,12 @@
                 <project.test.suite>src/test/resources/testng-selenium-base.xml</project.test.suite>
             </properties>
         </profile>
+        <profile>
+            <id>selenium-page-object</id>
+            <properties>
+                <project.test.suite>src/test/resources/testng-selenium-page-object.xml</project.test.suite>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -60,6 +66,12 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Selenium Page Object" verbose="2" annotations="JDK">
+    <test name="Elements Test">
+        <packages>
+            <package name="hw3.ex1"/>
+        </packages>
+    </test>
+    <test name="Controls Test">
+        <packages>
+            <package name="hw3.ex2"/>
+        </packages>
+    </test>
+</suite>
