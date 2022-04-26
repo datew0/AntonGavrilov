@@ -9,10 +9,9 @@ import io.qameta.allure.Story;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
-@Listeners({ScreenShotListener.class })
+@Listeners({ ScreenShotListener.class })
 @Story("User can login and interact with controls")
 public class ControlsBrokenTest extends SeleniumTest {
 
