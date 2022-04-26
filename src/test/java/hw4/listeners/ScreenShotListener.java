@@ -2,14 +2,11 @@ package hw4.listeners;
 
 import hw4.SeleniumTest;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.time.LocalDateTime;
 
 public class ScreenShotListener implements ITestListener {
 
@@ -17,12 +14,9 @@ public class ScreenShotListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         Object testClass = result.getInstance();
         WebDriver driver = ((SeleniumTest) testClass).getDriver();
-        if(driver != null) {
-            takeScreenshot(driver);
+        if (driver != null) {
+            byte[] screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png", screenShot);
         }
-    }
-    @Attachment(value = "Page screenshot", type = "image/png")
-    public byte[] takeScreenshot(WebDriver driver) {
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
 }
