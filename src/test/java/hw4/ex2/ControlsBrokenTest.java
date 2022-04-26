@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-@Listeners({ ScreenShotListener.class })
+@Listeners({ScreenShotListener.class})
 @Story("User can login and interact with controls")
 public class ControlsBrokenTest extends SeleniumTest {
 
