@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Selenium Cucumber" verbose="2" annotations="JDK">
+    <test name="Controls Test">
+        <classes>
+            <class name="hw5.ex1.ControlsTest"/>
+        </classes>
+    </test>
+    <test name="Table Test">
+        <classes>
+            <class name="hw5.ex2.TableTest"/>
+        </classes>
+    </test>
+    <test name="Table Vip Test">
+        <classes>
+            <class name="hw5.ex3.TableVipTest"/>
+        </classes>
+    </test>
+</suite>
