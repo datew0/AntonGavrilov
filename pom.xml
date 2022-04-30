@@ -54,6 +54,12 @@
                 <project.test.suite>src/test/resources/testng-step.xml</project.test.suite>
             </properties>
         </profile>
+        <profile>
+            <id>selenium-cucumber</id>
+            <properties>
+                <project.test.suite>src/test/resources/testng-cucumber.xml</project.test.suite>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -87,6 +93,18 @@
             <version>2.13.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>7.3.2</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
